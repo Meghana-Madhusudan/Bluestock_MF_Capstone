@@ -1,0 +1,33 @@
+============================================================
+ETL VALIDATION REPORT
+============================================================
+Dataset       : 04_monthly_sip_inflows.csv
+Generated On  : 2026-07-05 19:26:59
+
+Rows          : 48
+Columns       : 6
+
+Status        : SUCCESS
+
+Validation Summary
+------------------------------
+Duplicate Rows Removed : 0
+Invalid Dates          : 0
+
+Missing Values
+------------------------------
+month                     0
+sip_inflow_crore          0
+active_sip_accounts_crore 0
+new_sip_accounts_lakh     0
+sip_aum_lakh_crore        0
+yoy_growth_pct            12
+
+Data Types
+------------------------------
+month                     datetime64[us]
+sip_inflow_crore          int64
+active_sip_accounts_crore float64
+new_sip_accounts_lakh     float64
+sip_aum_lakh_crore        float64
+yoy_growth_pct            float64

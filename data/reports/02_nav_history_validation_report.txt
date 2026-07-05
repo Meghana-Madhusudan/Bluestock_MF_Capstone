@@ -2,7 +2,7 @@
 ETL VALIDATION REPORT
 ============================================================
 Dataset       : 02_nav_history.csv
-Generated On  : 2026-07-05 19:07:27
+Generated On  : 2026-07-05 19:26:59
 
 Rows          : 46000
 Columns       : 3

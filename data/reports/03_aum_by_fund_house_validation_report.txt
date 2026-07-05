@@ -2,7 +2,7 @@
 ETL VALIDATION REPORT
 ============================================================
 Dataset       : 03_aum_by_fund_house.csv
-Generated On  : 2026-07-05 19:07:27
+Generated On  : 2026-07-05 19:26:59
 
 Rows          : 90
 Columns       : 5

@@ -14,6 +14,7 @@ hard-coded if/else statements.
 
 from etl.transform import (
     standardize_column_names,
+    strip_whitespace,
     convert_to_datetime,
     convert_numeric_columns,
     remove_duplicate_records,
@@ -143,6 +144,53 @@ DATASET_CONFIG = {
         lambda df: sort_dataframe(
             df,
             ["date", "fund_house"],
+        ),
+    ],
+
+    "validations": [
+        validate_not_empty,
+    ],
+    },
+
+    "04_monthly_sip_inflows.csv": {
+
+    "expected_columns": [
+        "month",
+        "sip_inflow_crore",
+        "active_sip_accounts_crore",
+        "new_sip_accounts_lakh",
+        "sip_aum_lakh_crore",
+        "yoy_growth_pct",
+    ],
+
+    "transformations": [
+
+        standardize_column_names,
+
+        strip_whitespace,
+
+        lambda df: convert_to_datetime(
+            df,
+            ["month"],
+            "%Y-%m",
+        ),
+
+        lambda df: convert_numeric_columns(
+            df,
+            [
+                "sip_inflow_crore",
+                "active_sip_accounts_crore",
+                "new_sip_accounts_lakh",
+                "sip_aum_lakh_crore",
+                "yoy_growth_pct",
+            ],
+        ),
+
+        remove_duplicate_records,
+
+        lambda df: sort_dataframe(
+            df,
+            ["month"],
         ),
     ],
 

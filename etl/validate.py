@@ -155,7 +155,32 @@ def validate_amfi_codes(
     raise ValueError(
         "Invalid AMFI Codes found."
     )
+def validate_non_negative_values(
+    df: pd.DataFrame,
+    columns: list[str],
+) -> dict:
+    """
+    Validate that numeric columns contain
+    only non-negative values (>= 0).
 
+    Returns
+    -------
+    dict
+        Number of invalid values found in each column.
+    """
+
+    results = {}
+
+    for column in columns:
+
+        if column not in df.columns:
+            continue
+
+        invalid_count = (df[column] < 0).sum()
+
+        results[column] = int(invalid_count)
+
+    return results
 
 def run_validations(
     df: pd.DataFrame,
