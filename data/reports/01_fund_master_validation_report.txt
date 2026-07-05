@@ -1,0 +1,51 @@
+============================================================
+ETL VALIDATION REPORT
+============================================================
+Dataset       : 01_fund_master.csv
+Generated On  : 2026-07-05 19:07:27
+
+Rows          : 40
+Columns       : 15
+
+Status        : SUCCESS
+
+Validation Summary
+------------------------------
+Duplicate Rows Removed : 0
+Invalid Dates          : 0
+
+Missing Values
+------------------------------
+amfi_code                 0
+fund_house                0
+scheme_name               0
+category                  0
+sub_category              0
+plan                      0
+launch_date               0
+benchmark                 0
+expense_ratio_pct         0
+exit_load_pct             0
+min_sip_amount            0
+min_lumpsum_amount        0
+fund_manager              0
+risk_category             0
+sebi_category_code        0
+
+Data Types
+------------------------------
+amfi_code                 int64
+fund_house                str
+scheme_name               str
+category                  str
+sub_category              str
+plan                      str
+launch_date               datetime64[us]
+benchmark                 str
+expense_ratio_pct         float64
+exit_load_pct             float64
+min_sip_amount            int64
+min_lumpsum_amount        int64
+fund_manager              str
+risk_category             str
+sebi_category_code        str

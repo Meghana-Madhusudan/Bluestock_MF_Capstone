@@ -1,0 +1,36 @@
+============================================================
+ETL VALIDATION REPORT
+============================================================
+Dataset       : 03_aum_by_fund_house.csv
+Generated On  : 2026-07-05 19:07:27
+
+Rows          : 90
+Columns       : 5
+
+Status        : SUCCESS
+
+Validation Summary
+------------------------------
+Duplicate Rows Removed : 0
+Invalid Dates          : 0
+
+Missing Values
+------------------------------
+date                      0
+fund_house                0
+aum_lakh_crore            0
+aum_crore                 0
+num_schemes               0
+
+Date Range
+------------------------------
+Start Date : 2022-03-31 00:00:00
+End Date   : 2025-12-31 00:00:00
+
+Data Types
+------------------------------
+date                      datetime64[us]
+fund_house                str
+aum_lakh_crore            float64
+aum_crore                 int64
+num_schemes               int64
