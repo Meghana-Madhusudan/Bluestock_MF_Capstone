@@ -199,8 +199,218 @@ DATASET_CONFIG = {
     ],
     },
 
-}
+    "05_category_inflows.csv": {
 
+    "expected_columns": [
+        "month",
+        "category",
+        "net_inflow_crore",
+    ],
+
+    "transformations": [
+
+        standardize_column_names,
+
+        strip_whitespace,
+
+        lambda df: convert_to_datetime(
+            df,
+            ["month"],
+            "%Y-%m",
+        ),
+
+        lambda df: convert_numeric_columns(
+            df,
+            [
+                "net_inflow_crore",
+            ],
+        ),
+
+        remove_duplicate_records,
+
+        lambda df: sort_dataframe(
+            df,
+            ["month", "category"],
+        ),
+    ],
+
+    "validations": [
+        validate_not_empty,
+    ],
+    },
+
+        "06_industry_folio_count.csv": {
+
+    "expected_columns": [
+        "month",
+        "total_folios_crore",
+        "equity_folios_crore",
+        "debt_folios_crore",
+        "hybrid_folios_crore",
+        "others_folios_crore",
+    ],
+
+    "transformations": [
+
+        standardize_column_names,
+
+        strip_whitespace,
+
+        lambda df: convert_to_datetime(
+            df,
+            ["month"],
+            "%Y-%m",
+        ),
+
+        lambda df: convert_numeric_columns(
+            df,
+            [
+                "total_folios_crore",
+                "equity_folios_crore",
+                "debt_folios_crore",
+                "hybrid_folios_crore",
+                "others_folios_crore",
+            ],
+        ),
+
+        remove_duplicate_records,
+
+        lambda df: sort_dataframe(
+            df,
+            ["month"],
+        ),
+    ],
+
+    "validations": [
+        validate_not_empty,
+    ],
+    },
+
+        "07_scheme_performance.csv": {
+
+        "expected_columns": [
+            "amfi_code",
+            "scheme_name",
+            "fund_house",
+            "category",
+            "plan",
+            "return_1yr_pct",
+            "return_3yr_pct",
+            "return_5yr_pct",
+            "benchmark_3yr_pct",
+            "alpha",
+            "beta",
+            "sharpe_ratio",
+            "sortino_ratio",
+            "std_dev_ann_pct",
+            "max_drawdown_pct",
+            "aum_crore",
+            "expense_ratio_pct",
+            "morningstar_rating",
+            "risk_grade",
+        ],
+
+        "transformations": [
+
+            standardize_column_names,
+
+            strip_whitespace,
+
+            lambda df: convert_numeric_columns(
+                df,
+                [
+                    "amfi_code",
+                    "return_1yr_pct",
+                    "return_3yr_pct",
+                    "return_5yr_pct",
+                    "benchmark_3yr_pct",
+                    "alpha",
+                    "beta",
+                    "sharpe_ratio",
+                    "sortino_ratio",
+                    "std_dev_ann_pct",
+                    "max_drawdown_pct",
+                    "aum_crore",
+                    "expense_ratio_pct",
+                    "morningstar_rating",
+                ],
+            ),
+
+            remove_duplicate_records,
+
+            lambda df: sort_dataframe(
+                df,
+                ["fund_house", "scheme_name"],
+            ),
+        ],
+
+        "validations": [
+            validate_not_empty,
+        ],
+    },
+
+        "08_investor_transactions.csv": {
+
+        "expected_columns": [
+            "investor_id",
+            "transaction_date",
+            "amfi_code",
+            "transaction_type",
+            "amount_inr",
+            "state",
+            "city",
+            "city_tier",
+            "age_group",
+            "gender",
+            "annual_income_lakh",
+            "payment_mode",
+            "kyc_status",
+        ],
+
+        "transformations": [
+
+            standardize_column_names,
+
+            strip_whitespace,
+
+            lambda df: convert_to_datetime(
+                df,
+                ["transaction_date"],
+            ),
+
+            lambda df: convert_numeric_columns(
+                df,
+                [
+                    "amfi_code",
+                    "amount_inr",
+                    "annual_income_lakh",
+                ],
+            ),
+
+            remove_duplicate_records,
+
+            lambda df: sort_dataframe(
+                df,
+                [
+                    "transaction_date",
+                    "investor_id",
+                ],
+            ),
+        ],
+
+        "validations": [
+            validate_not_empty,
+        ],
+    },
+
+}
+DATASET_REGISTRY = [
+    {
+        "input": filename,
+        "output": filename.replace(".csv", "_processed.csv"),
+    }
+    for filename in DATASET_CONFIG.keys()
+]
 
 def get_dataset_config(dataset_name: str) -> dict:
     """

@@ -4,45 +4,17 @@ run_pipeline.py
 Execute the ETL pipeline for all configured datasets.
 """
 
-from etl.config import (
-    RAW_DATA_DIR,
-    PROCESSED_DATA_DIR,
-    FUND_MASTER_FILE,
-    NAV_HISTORY_FILE,
-    AUM_BY_FUND_HOUSE_FILE,
-    MONTHLY_SIP_INFLOWS_FILE,
-)
-
+from etl.config import RAW_DATA_DIR, PROCESSED_DATA_DIR
+from etl.datasets import DATASET_REGISTRY
 from etl.pipeline import run_pipeline
 
 
 def main():
+    """
+    Run the ETL pipeline for every dataset registered in DATASET_REGISTRY.
+    """
 
-    datasets = [
-
-        {
-            "input": FUND_MASTER_FILE,
-            "output": "01_fund_master_processed.csv",
-        },
-
-        {
-            "input": NAV_HISTORY_FILE,
-            "output": "02_nav_history_processed.csv",
-        },
-
-        {
-            "input": AUM_BY_FUND_HOUSE_FILE,
-            "output": "03_aum_by_fund_house_processed.csv",
-        },
-
-        {
-            "input": MONTHLY_SIP_INFLOWS_FILE,
-            "output": "04_monthly_sip_inflows_processed.csv",
-        },
-
-    ]
-
-    for dataset in datasets:
+    for dataset in DATASET_REGISTRY:
 
         print("\n" + "=" * 60)
         print(f"Processing: {dataset['input']}")

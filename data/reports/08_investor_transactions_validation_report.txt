@@ -1,0 +1,47 @@
+============================================================
+ETL VALIDATION REPORT
+============================================================
+Dataset       : 08_investor_transactions.csv
+Generated On  : 2026-07-07 16:35:42
+
+Rows          : 32778
+Columns       : 13
+
+Status        : SUCCESS
+
+Validation Summary
+------------------------------
+Duplicate Rows Removed : 0
+Invalid Dates          : 0
+
+Missing Values
+------------------------------
+investor_id               0
+transaction_date          0
+amfi_code                 0
+transaction_type          0
+amount_inr                0
+state                     0
+city                      0
+city_tier                 0
+age_group                 0
+gender                    0
+annual_income_lakh        0
+payment_mode              0
+kyc_status                0
+
+Data Types
+------------------------------
+investor_id               str
+transaction_date          datetime64[us]
+amfi_code                 int64
+transaction_type          str
+amount_inr                int64
+state                     str
+city                      str
+city_tier                 str
+age_group                 str
+gender                    str
+annual_income_lakh        float64
+payment_mode              str
+kyc_status                str

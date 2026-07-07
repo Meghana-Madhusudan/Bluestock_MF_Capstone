@@ -1,10 +1,10 @@
 ============================================================
 ETL VALIDATION REPORT
 ============================================================
-Dataset       : 04_monthly_sip_inflows.csv
+Dataset       : 06_industry_folio_count.csv
 Generated On  : 2026-07-07 16:35:42
 
-Rows          : 48
+Rows          : 21
 Columns       : 6
 
 Status        : SUCCESS
@@ -17,17 +17,17 @@ Invalid Dates          : 0
 Missing Values
 ------------------------------
 month                     0
-sip_inflow_crore          0
-active_sip_accounts_crore 0
-new_sip_accounts_lakh     0
-sip_aum_lakh_crore        0
-yoy_growth_pct            12
+total_folios_crore        0
+equity_folios_crore       0
+debt_folios_crore         0
+hybrid_folios_crore       0
+others_folios_crore       0
 
 Data Types
 ------------------------------
 month                     datetime64[us]
-sip_inflow_crore          int64
-active_sip_accounts_crore float64
-new_sip_accounts_lakh     float64
-sip_aum_lakh_crore        float64
-yoy_growth_pct            float64
+total_folios_crore        float64
+equity_folios_crore       float64
+debt_folios_crore         float64
+hybrid_folios_crore       float64
+others_folios_crore       float64

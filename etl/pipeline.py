@@ -46,8 +46,6 @@ def run_pipeline(
     # Load dataset configuration
     # --------------------------------------------------
 
-    print(f"DEBUG dataset_name = '{dataset_name}'")
-    
     config = get_dataset_config(dataset_name)
 
     expected_columns = config["expected_columns"]

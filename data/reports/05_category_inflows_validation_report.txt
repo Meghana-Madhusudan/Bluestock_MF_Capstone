@@ -1,11 +1,11 @@
 ============================================================
 ETL VALIDATION REPORT
 ============================================================
-Dataset       : 04_monthly_sip_inflows.csv
+Dataset       : 05_category_inflows.csv
 Generated On  : 2026-07-07 16:35:42
 
-Rows          : 48
-Columns       : 6
+Rows          : 144
+Columns       : 3
 
 Status        : SUCCESS
 
@@ -17,17 +17,11 @@ Invalid Dates          : 0
 Missing Values
 ------------------------------
 month                     0
-sip_inflow_crore          0
-active_sip_accounts_crore 0
-new_sip_accounts_lakh     0
-sip_aum_lakh_crore        0
-yoy_growth_pct            12
+category                  0
+net_inflow_crore          0
 
 Data Types
 ------------------------------
 month                     datetime64[us]
-sip_inflow_crore          int64
-active_sip_accounts_crore float64
-new_sip_accounts_lakh     float64
-sip_aum_lakh_crore        float64
-yoy_growth_pct            float64
+category                  str
+net_inflow_crore          float64

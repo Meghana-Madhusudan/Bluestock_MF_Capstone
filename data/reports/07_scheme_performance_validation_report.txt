@@ -1,0 +1,59 @@
+============================================================
+ETL VALIDATION REPORT
+============================================================
+Dataset       : 07_scheme_performance.csv
+Generated On  : 2026-07-07 16:35:42
+
+Rows          : 40
+Columns       : 19
+
+Status        : SUCCESS
+
+Validation Summary
+------------------------------
+Duplicate Rows Removed : 0
+Invalid Dates          : 0
+
+Missing Values
+------------------------------
+amfi_code                 0
+scheme_name               0
+fund_house                0
+category                  0
+plan                      0
+return_1yr_pct            0
+return_3yr_pct            0
+return_5yr_pct            0
+benchmark_3yr_pct         0
+alpha                     0
+beta                      0
+sharpe_ratio              0
+sortino_ratio             0
+std_dev_ann_pct           0
+max_drawdown_pct          0
+aum_crore                 0
+expense_ratio_pct         0
+morningstar_rating        0
+risk_grade                0
+
+Data Types
+------------------------------
+amfi_code                 int64
+scheme_name               str
+fund_house                str
+category                  str
+plan                      str
+return_1yr_pct            float64
+return_3yr_pct            float64
+return_5yr_pct            float64
+benchmark_3yr_pct         float64
+alpha                     float64
+beta                      float64
+sharpe_ratio              float64
+sortino_ratio             float64
+std_dev_ann_pct           float64
+max_drawdown_pct          float64
+aum_crore                 int64
+expense_ratio_pct         float64
+morningstar_rating        int64
+risk_grade                str
