@@ -403,6 +403,57 @@ DATASET_CONFIG = {
         ],
     },
 
+        "09_portfolio_holdings.csv": {
+
+        "expected_columns": [
+            "amfi_code",
+            "stock_symbol",
+            "stock_name",
+            "sector",
+            "weight_pct",
+            "market_value_cr",
+            "current_price_inr",
+            "portfolio_date",
+        ],
+
+        "transformations": [
+
+            standardize_column_names,
+
+            strip_whitespace,
+
+            lambda df: convert_to_datetime(
+                df,
+                ["portfolio_date"],
+            ),
+
+            lambda df: convert_numeric_columns(
+                df,
+                [
+                    "amfi_code",
+                    "weight_pct",
+                    "market_value_cr",
+                    "current_price_inr",
+                ],
+            ),
+
+            remove_duplicate_records,
+
+            lambda df: sort_dataframe(
+                df,
+                [
+                    "portfolio_date",
+                    "amfi_code",
+                    "stock_symbol",
+                ],
+            ),
+        ],
+
+        "validations": [
+            validate_not_empty,
+        ],
+    },
+
 }
 DATASET_REGISTRY = [
     {

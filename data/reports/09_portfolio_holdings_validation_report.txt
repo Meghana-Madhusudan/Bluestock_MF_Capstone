@@ -1,0 +1,37 @@
+============================================================
+ETL VALIDATION REPORT
+============================================================
+Dataset       : 09_portfolio_holdings.csv
+Generated On  : 2026-07-07 16:40:20
+
+Rows          : 322
+Columns       : 8
+
+Status        : SUCCESS
+
+Validation Summary
+------------------------------
+Duplicate Rows Removed : 0
+Invalid Dates          : 0
+
+Missing Values
+------------------------------
+amfi_code                 0
+stock_symbol              0
+stock_name                0
+sector                    0
+weight_pct                0
+market_value_cr           0
+current_price_inr         0
+portfolio_date            0
+
+Data Types
+------------------------------
+amfi_code                 int64
+stock_symbol              str
+stock_name                str
+sector                    str
+weight_pct                float64
+market_value_cr           float64
+current_price_inr         float64
+portfolio_date            datetime64[us]

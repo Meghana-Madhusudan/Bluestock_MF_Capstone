@@ -2,7 +2,7 @@
 ETL VALIDATION REPORT
 ============================================================
 Dataset       : 01_fund_master.csv
-Generated On  : 2026-07-07 16:35:41
+Generated On  : 2026-07-07 16:40:19
 
 Rows          : 40
 Columns       : 15

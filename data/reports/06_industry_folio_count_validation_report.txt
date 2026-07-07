@@ -2,7 +2,7 @@
 ETL VALIDATION REPORT
 ============================================================
 Dataset       : 06_industry_folio_count.csv
-Generated On  : 2026-07-07 16:35:42
+Generated On  : 2026-07-07 16:40:20
 
 Rows          : 21
 Columns       : 6
