@@ -1,10 +1,10 @@
 ============================================================
 ETL VALIDATION REPORT
 ============================================================
-Dataset       : 02_nav_history.csv
-Generated On  : 2026-07-07 16:46:54
+Dataset       : 10_benchmark_indices.csv
+Generated On  : 2026-07-07 16:46:55
 
-Rows          : 46000
+Rows          : 8050
 Columns       : 3
 
 Status        : SUCCESS
@@ -13,13 +13,12 @@ Validation Summary
 ------------------------------
 Duplicate Rows Removed : 0
 Invalid Dates          : 0
-Invalid NAV Values     : 0
 
 Missing Values
 ------------------------------
-amfi_code                 0
 date                      0
-nav                       0
+index_name                0
+close_value               0
 
 Date Range
 ------------------------------
@@ -28,6 +27,6 @@ End Date   : 2026-05-29 00:00:00
 
 Data Types
 ------------------------------
-amfi_code                 int64
 date                      datetime64[us]
-nav                       float64
+index_name                str
+close_value               float64

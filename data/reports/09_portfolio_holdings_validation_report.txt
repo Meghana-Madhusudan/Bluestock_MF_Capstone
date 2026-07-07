@@ -2,7 +2,7 @@
 ETL VALIDATION REPORT
 ============================================================
 Dataset       : 09_portfolio_holdings.csv
-Generated On  : 2026-07-07 16:40:20
+Generated On  : 2026-07-07 16:46:55
 
 Rows          : 322
 Columns       : 8

@@ -454,6 +454,48 @@ DATASET_CONFIG = {
         ],
     },
 
+        "10_benchmark_indices.csv": {
+
+        "expected_columns": [
+            "date",
+            "index_name",
+            "close_value",
+        ],
+
+        "transformations": [
+
+            standardize_column_names,
+
+            strip_whitespace,
+
+            lambda df: convert_to_datetime(
+                df,
+                ["date"],
+            ),
+
+            lambda df: convert_numeric_columns(
+                df,
+                [
+                    "close_value",
+                ],
+            ),
+
+            remove_duplicate_records,
+
+            lambda df: sort_dataframe(
+                df,
+                [
+                    "date",
+                    "index_name",
+                ],
+            ),
+        ],
+
+        "validations": [
+            validate_not_empty,
+        ],
+    },
+
 }
 DATASET_REGISTRY = [
     {
